@@ -30,26 +30,30 @@ let discriminatePath = function (req, res, next) {
 app.use(discriminatePath);
 
 app.get('/totalSupply/:kind', asyncHandler(async (req, res, next) => {
-  req.setTimeout(50000);
-  client.request('eth_getTotalSupply', {} ,  function(err, response) {
-  if(err){
-    res.render('index', { title: 'Petra Stats', message: 'Failed to retrieve information from server!', result: '' , passed: false});
-  } else {
-    let computedValue = hexMath.convertToWeiNumberOrDecimal(response.result, req.params['kind']);
-    res.render('index', { title: 'Petra Stats', message: `Petra: Total Supply in ${req.params['kind']}`,result: `${computedValue}`, passed: true});
-  }})})
+    req.setTimeout(50000);
+    client.request('eth_getTotalSupply', {} ,  function(err, response) {
+      if(err) {
+        res.render('index', { title: 'Petra Stats', message: 'Failed to retrieve information from server!', result: '' , passed: false});
+      } else {
+        let computedValue = hexMath.convertToWeiNumberOrDecimal(response.result, req.params['kind']);
+        res.render('index', { title: 'Petra Stats', message: `Petra: Total Supply in ${req.params['kind']}`,result: `${computedValue}`, passed: true});
+      }
+    })
+  })
 );
 
 
 app.get('/circulatingSupply/:kind', asyncHandler(async (req, res, next) => {
-  req.setTimeout(50000);
-  client.request('eth_getCirculatingSupply', {} ,  function(err, response) {
-  if(err){
-    res.render('index', { title: 'Petra Stats', message: 'Failed to retrieve information from server!',result: '', passed: false});
-  } else {
-    let computedValue = hexMath.convertToWeiNumberOrDecimal(response.result, req.params['kind']);
-    res.render('index', { title: 'Petra Stats', message: `Petra: Circulating Supply in ${req.params['kind']}` ,result: `${computedValue}`, passed: true});  
-  }})})
+    req.setTimeout(50000);
+    client.request('eth_getCirculatingSupply', {} ,  function(err, response) {
+      if(err) {
+        res.render('index', { title: 'Petra Stats', message: 'Failed to retrieve information from server!',result: '', passed: false});
+      } else {
+        let computedValue = hexMath.convertToWeiNumberOrDecimal(response.result, req.params['kind']);
+        res.render('index', { title: 'Petra Stats', message: `Petra: Circulating Supply in ${req.params['kind']}` ,result: `${computedValue}`, passed: true});  
+      }
+    })
+  })
 );
 
 
