@@ -1,0 +1,36 @@
+/* style.css */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.petra
+{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+}
+.inner-div
+{
+     width: 300px;
+     height: 200px; 
+}
+
+#value , #title {
+  margin-top: 0.8em;
+  color: gray;
+  font-size: 1.4em;
+  font-weight: 400;
+}
+
+#error-title {
+  margin-top: 0.8em;
+  color: red;
+  font-size: 1.4em;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: aqua;
+}

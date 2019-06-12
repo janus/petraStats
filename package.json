@@ -1,0 +1,25 @@
+{
+  "name": "petra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config index.js",
+    "lint": "jslint --edition=latest index.js /libs/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "helmet": "^3.18.0",
+    "jayson": "^3.0.2",
+    "pug": "^2.0.3",
+    "web3-utils": "^1.0.0-beta.55"
+  },
+  "devDependencies": {
+    "jslint": "^0.12.1"
+  }
+}
